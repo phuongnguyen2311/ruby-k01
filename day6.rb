@@ -78,6 +78,6 @@
   def check_email?(email)
     p email.match?(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]/) 
   end
-  check_email?("phuong@gmail.com") 
+  check_email?("phuong@9.com") 
   check_email?("phuong.it@gmail.com")
   check_email?("phuong.it@gmail.com.vn")
