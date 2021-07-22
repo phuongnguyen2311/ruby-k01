@@ -13314,3 +13314,107 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.3ms | Allocations: 9287)
 
 
+Started GET "/users" for ::1 at 2021-07-22 15:53:12 +0700
+  [1m[35m (17.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (56.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 612.4ms | Allocations: 95457)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 715.3ms | Allocations: 122608)
+Completed 200 OK in 750ms (Views: 674.4ms | ActiveRecord: 62.3ms | Allocations: 125436)
+
+
+Started GET "/users" for ::1 at 2021-07-22 15:53:13 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 12743)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.6ms | Allocations: 13107)
+
+
+Started GET "/" for ::1 at 2021-07-22 15:53:17 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mrkatsu/.rvm/gems/ruby-2.7.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mrkatsu/.rvm/gems/ruby-2.7.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 42.1ms | Allocations: 220)
+Completed 200 OK in 76ms (Views: 43.5ms | ActiveRecord: 0.0ms | Allocations: 945)
+
+
+Started GET "/users" for ::1 at 2021-07-22 15:53:20 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2851)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 13210)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 2.3ms | Allocations: 14343)
+
+
+Started GET "/users" for ::1 at 2021-07-22 15:53:34 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2495)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 193.8ms | Allocations: 59572)
+Completed 200 OK in 195ms (Views: 193.8ms | ActiveRecord: 0.4ms | Allocations: 59976)
+
+
+Started GET "/users" for ::1 at 2021-07-22 15:54:22 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 13221)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.3ms | Allocations: 14343)
+
+
+Started GET "/users" for ::1 at 2021-07-22 15:55:24 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2845)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 13208)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.4ms | Allocations: 14323)
+
+
+Started GET "/users" for ::1 at 2021-07-22 15:56:00 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2845)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 13213)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.3ms | Allocations: 14328)
+
+
+Started GET "/users" for ::1 at 2021-07-22 15:56:01 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 12647)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.6ms | Allocations: 13057)
+
+
