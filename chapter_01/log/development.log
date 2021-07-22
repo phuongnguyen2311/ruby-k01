@@ -13119,3 +13119,198 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 8623)
 
 
+Started GET "/users" for ::1 at 2021-07-22 08:59:39 +0700
+  [1m[35m (14.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (14.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 166.3ms | Allocations: 7769)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1018.5ms | Allocations: 19479)
+Completed 200 OK in 1122ms (Views: 993.8ms | ActiveRecord: 50.0ms | Allocations: 22308)
+
+
+Started GET "/users" for ::1 at 2021-07-22 08:59:41 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 36.4ms | Allocations: 1342)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 135.1ms | Allocations: 8652)
+Completed 200 OK in 147ms (Views: 143.1ms | ActiveRecord: 1.1ms | Allocations: 9015)
+
+
+Started GET "/users" for ::1 at 2021-07-22 09:05:40 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 142.7ms | Allocations: 4933)
+  Rendered layout layouts/application.html.erb (Duration: 143.0ms | Allocations: 4998)
+Completed 500 Internal Server Error in 147ms (Allocations: 6110)
+
+
+  
+ActionView::Template::Error (The asset "manager/user.js" is not present in the asset pipeline.
+):
+    1: <%=javascript_include_tag('manager/user.js') %>
+    2: <p id="notice"><%= notice %></p>
+    3: 
+    4: <h1>Users</h1>
+  
+app/views/users/index.html.erb:1
+Started GET "/users" for ::1 at 2021-07-22 09:07:16 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 224.1ms | Allocations: 15364)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 249.0ms | Allocations: 22047)
+Completed 200 OK in 253ms (Views: 251.5ms | ActiveRecord: 7.6ms | Allocations: 23279)
+
+
+Started GET "/users" for ::1 at 2021-07-22 09:08:15 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 5970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 12291)
+Completed 200 OK in 37ms (Views: 31.9ms | ActiveRecord: 4.4ms | Allocations: 12708)
+
+
+Started GET "/users" for ::1 at 2021-07-22 09:10:21 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (45.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 118.4ms | Allocations: 6018)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 173.6ms | Allocations: 12338)
+Completed 200 OK in 180ms (Views: 129.5ms | ActiveRecord: 45.7ms | Allocations: 12741)
+
+
+Started GET "/users" for ::1 at 2021-07-22 09:10:25 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2466)
+Started GET "/users?email=thangneymar44" for ::1 at 2021-07-22 09:10:25 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"email"=>"thangneymar44"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 14188)
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.4ms | Allocations: 14649)
+
+
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`emails` = 'thangneymar44'[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 109.2ms | Allocations: 10979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 119.4ms | Allocations: 17301)
+Completed 200 OK in 132ms (Views: 124.9ms | ActiveRecord: 6.7ms | Allocations: 17764)
+
+
+Started GET "/users" for ::1 at 2021-07-22 09:10:28 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2468)
+Started GET "/users?email=thang" for ::1 at 2021-07-22 09:10:28 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"email"=>"thang"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`emails` = 'thang'[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered layout layouts/application.html.erb (Duration: 43.6ms | Allocations: 12814)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.9ms | Allocations: 13495)
+
+
+  Rendered users/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 5573)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 12752)
+Completed 200 OK in 53ms (Views: 50.3ms | ActiveRecord: 1.5ms | Allocations: 13186)
+
+
+Started GET "/users" for ::1 at 2021-07-22 09:10:42 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2466)
+Started GET "/users?email=tranhuuthangcoi@gmail.com" for ::1 at 2021-07-22 09:10:42 +0700
+Processing by UsersController#index as HTML
+  Parameters: {"email"=>"tranhuuthangcoi@gmail.com"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`emails` = 'tranhuuthangcoi@gmail.com'[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 4762)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 14784)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.7ms | Allocations: 16139)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 14633)
+Completed 200 OK in 37ms (Views: 30.2ms | ActiveRecord: 4.8ms | Allocations: 15543)
+
+
+Started GET "/microposts" for ::1 at 2021-07-22 11:05:12 +0700
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/microposts"):
+  
+Started GET "/users" for ::1 at 2021-07-22 11:05:17 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 130.7ms | Allocations: 20618)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 163.1ms | Allocations: 27820)
+Completed 200 OK in 182ms (Views: 152.4ms | ActiveRecord: 13.3ms | Allocations: 30133)
+
+
+Started GET "/users" for ::1 at 2021-07-22 11:05:18 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 8901)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.4ms | Allocations: 9316)
+
+
+Started GET "/users" for ::1 at 2021-07-22 11:05:21 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:26
+  Rendered users/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2467)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 8884)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.3ms | Allocations: 9287)
+
+
