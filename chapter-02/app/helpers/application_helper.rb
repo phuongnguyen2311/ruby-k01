@@ -4,6 +4,6 @@ module ApplicationHelper
    page_title.empty? ? base_title : "#{page_title} | #{base_title}"
  end
  def full_name user_name = ""
-    user_name = "cong giap"
+    user_name.nil? ? "cong giap" : user_name
  end
 end
