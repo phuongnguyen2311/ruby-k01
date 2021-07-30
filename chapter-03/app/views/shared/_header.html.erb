@@ -1,12 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
  <div class="container">
-  <%= link_to "sample app", "#", id: "logo" %>
+  <%= link_to "sample app", "/users", id: "logo" %>
    <nav>
     <ul class="nav navbar-nav navbar-right">
-     <li><%= link_to "Home", "#" %></li>
-     <li><%= link_to "Help", "#" %></li>
-     <li><%= link_to "Log in", "#" %></li>
-     <li><%= link_to "Sign in", "#" %></li>
+      <li><%= link_to "Home", "/users" %></li>
+      <li><%= link_to "Help", "#" %></li>
+      <% if logged_in? %>
+      <li><%= link_to "Contact", "/contact" %></li>
+      <li><%= link_to "Logout", "/logout" %></li> 
+      <% else %>
+        <li><%= link_to "Login", "/login" %></li>
+        <li><%= link_to "SignUp", "/signup" %></li>
+      <% end %> 
     </ul>
    </nav>
  </div>

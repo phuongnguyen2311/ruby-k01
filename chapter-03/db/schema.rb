@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_094750) do
+ActiveRecord::Schema.define(version: 2021_07_27_023848) do
 
   create_table "microposts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_07_22_094750) do
     t.string "gender"
     t.integer "year"
     t.string "school"
+    t.string "password_digest"
   end
 
 end

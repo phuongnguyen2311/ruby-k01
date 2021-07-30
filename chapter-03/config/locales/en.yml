@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  invalid_email_password_combination: "login not success"
+  register_sucsess: "Register Success"

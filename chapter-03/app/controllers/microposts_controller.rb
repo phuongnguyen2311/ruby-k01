@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: %i[ show edit update destroy ]
-
+  before_action :sign_in
   # GET /microposts or /microposts.json
   def index
     @microposts = Micropost.all
@@ -22,15 +22,10 @@ class MicropostsController < ApplicationController
   # POST /microposts or /microposts.json
   def create
     @micropost = Micropost.new(micropost_params)
-
-    respond_to do |format|
-      if @micropost.save
-        format.html { redirect_to @micropost, notice: "Micropost was successfully created." }
-        format.json { render :show, status: :created, location: @micropost }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @micropost.errors, status: :unprocessable_entity }
-      end
+    if @micropost.save
+      redirect_to @micropost
+    else
+      render 'new'
     end
   end
 

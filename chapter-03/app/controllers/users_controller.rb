@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
+  before_action :sign_in, only: %i[ index]
   # GET /users or /users.json
+  
   def index
     # @users = User.all
     @email = params[:email]
@@ -10,33 +11,30 @@ class UsersController < ApplicationController
   
   # GET /users/1 or /users/1.json
   def show
+    @user = User.find_by id: params[:id]
+  end
+  def contacts
+    @user = User.find_by id: session[:user_id]
   end
 
   # GET /users/new
   def new
     @user = User.new
   end
-  def signin
-  end
-  def login
-  end
-  
+
   # GET /users/1/edit
   def edit
   end
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
-    respond_to do |format|
+    @user = User.new(user_params) # Not the final implementation!
       if @user.save
-        format.html { redirect_to @user, notice: "User was successfully created." }
-        format.json { render :show, status: :created, location: @user }
+         flash[:success] = t "register_sucsess"
+         redirect_to "/login"
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+       render :new
       end
-    end
   end
 
   # PATCH/PUT /users/1 or /users/1.json
@@ -69,7 +67,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :phone, :age, :date_of_birth, :gender ,:year, :school)
+      params.require(:user).permit(:name, :email, :gender, :password , :password_confirmation)
     end
 end
 # id, name, email, phone, age, created_at, updated_at, date_of_birth, gender, year, school
