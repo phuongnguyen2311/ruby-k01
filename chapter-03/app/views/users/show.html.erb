@@ -48,6 +48,13 @@
   <%= @user.password_digest %>
 </p>
 
+<h1>List Microposts</h1>
+<div>
+<% @user.microposts.each do |micro| %>
+  <p><%= micro.content%> </p>
+<% end %>
+
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

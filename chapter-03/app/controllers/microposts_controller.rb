@@ -1,9 +1,8 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: %i[ show edit update destroy ]
-  before_action :sign_in
   # GET /microposts or /microposts.json
   def index
-    @microposts = Micropost.all
+    @microposts = current_user.microposts
   end
 
   # GET /microposts/1 or /microposts/1.json

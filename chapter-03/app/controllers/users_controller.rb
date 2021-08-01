@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-  before_action :sign_in, only: %i[ index]
+  before_action :set_user, only: %i[edit update destroy update_user]
+  skip_before_action :sign_in?, only: %i[new create]
   # GET /users or /users.json
   
   def index
@@ -11,8 +12,9 @@ class UsersController < ApplicationController
   
   # GET /users/1 or /users/1.json
   def show
-    @user = User.find_by id: params[:id]
+    @user =  User.includes(:microposts).find_by(id: params[:id])
   end
+  
   def contacts
     @user = User.find_by id: session[:user_id]
   end
