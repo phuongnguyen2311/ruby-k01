@@ -37,12 +37,14 @@
         <td><%= user.year %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% if current_user.admin? && !current_user?(user) %>
+        | <%= link_to "delete", user, method: :delete, data: {confirm: "You sure?"} %>
+        <% end %></td>
       </tr>
     <% end %>
+    <%= will_paginate @users %>
   </tbody>
 </table>
 
 <br>
-
 <%= link_to 'New User', new_user_path %>

@@ -26,8 +26,10 @@ module SessionsHelper
   end
 
   def sign_in?
-    return if logged_in?
-    redirect_to login_path and return
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
 
   def remember user
@@ -41,4 +43,9 @@ module SessionsHelper
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
+
+  def current_user?(user)
+    user == current_user
+  end
+  
 end

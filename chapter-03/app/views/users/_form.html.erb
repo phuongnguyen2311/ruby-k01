@@ -11,45 +11,99 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="control-group">
+    <!-- Username -->
+    <label class="control-label"  for="name">Username</label>
+    <div class="controls">
+      <input type="text" id="name" name="user[name]" placeholder="" class="input-xlarge" value="<%= @user.name.present? ? @user.name : ''%>">
+      <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="control-group">
+    <!-- E-mail -->
+    <label class="control-label" for="email">E-mail</label>
+    <div class="controls">
+      <input type="text" id="email" name="user[email]" placeholder="" class="input-xlarge" value="<%= @user.email.present? ? @user.email : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.number_field :phone %>
+  <div class="control-group">
+    <!-- Password-->
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+      <input type="password" id="password" name="user[password]" placeholder="" class="input-xlarge">
+      <p class="help-block">Password should be at least 4 characters</p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
+  <div class="control-group">
+    <!-- Password -->
+    <label class="control-label"  for="password_confirmation">Password (Confirm)</label>
+    <div class="controls">
+      <input type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+  <div class="control-group">
+    <!-- Phone -->
+    <label class="control-label" for="phone">Phone</label>
+    <div class="controls">
+      <input type="text" id="phone" name="user[phone]" placeholder="" class="input-xlarge" value="<%= @user.phone.present? ? @user.phone : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :BirthDay%>
-    <%= form.date_field  :date_of_birth %>
+  <div class="control-group">
+    <!-- Age -->
+    <label class="control-label" for="email">Age</label>
+    <div class="controls">
+      <input type="text" id="age" name="user[age]" placeholder="" class="input-xlarge" value="<%= @user.age.present? ? @user.age : ''%> ">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :Sex %>
-    <%= form.text_field :gender %>
+  <div class="control-group">
+    <!-- BirthDay -->
+    <label class="control-label" for="date_of_birth">BirthDay</label>
+    <div class="controls">
+      <input type="text" id="date_of_birth" name="user[date_of_birth]" placeholder="" class="input-xlarge" value="<%= @user.date_of_birth.present? ? @user.date_of_birth : ''%> ">
+      <p class="help-block">Please dd/mm/yyyy </p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
+  <div class="control-group">
+    <!-- Year -->
+    <label class="control-label" for="year">Year</label>
+    <div class="controls">
+      <input type="text" id="year" name="user[year]" placeholder="" class="input-xlarge" value="<%= @user.year.present? ? @user.year : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :school %>
-    <%= form.text_field :school %>
+  <div class="control-group">
+    <!-- BirthDay -->
+    <label class="control-label" for="school">School</label>
+    <div class="controls">
+      <input type="text" id="school" name="user[school]" placeholder="" class="input-xlarge" value="<%= @user.school.present? ? @user.school : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
   </div>
+
+  <div class="control-group">
+   <!-- Gender -->
+   <div class="controls">
+    <label class="control-label"  for="gender">Gender</label>
+    </br>
+    <input type="radio" id="male" name="user[gender]" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="user[gender]" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="javascript" name="user[gender]" value="orther">
+    <label for="javascript">Orther</label>
+   </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

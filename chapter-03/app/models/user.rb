@@ -15,8 +15,8 @@ class User < ApplicationRecord
   validates :gender, :inclusion => { :in => %w(male female orther), :allow_blank => true}
   validates_presence_of :gender, message: "khong dc de trong"
   
-  validates :password_confirmation, presence: true
-  
+  validates_presence_of :password_confirmation, if: -> { password.present? }
+  validates_confirmation_of :password, if: -> { password.present? }
   def to_lower
    self.name = self.name.downcase
   end

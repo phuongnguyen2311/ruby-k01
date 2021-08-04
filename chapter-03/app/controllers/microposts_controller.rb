@@ -3,6 +3,7 @@ class MicropostsController < ApplicationController
   # GET /microposts or /microposts.json
   def index
     @microposts = current_user.microposts
+    # @users = @user.microposts
   end
 
   # GET /microposts/1 or /microposts/1.json
