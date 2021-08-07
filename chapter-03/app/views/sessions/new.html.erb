@@ -7,11 +7,6 @@
   <form actions = "/login" method = "POST">
 
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <% flash.each do |message_type, message| %>
-       <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %> 
-
    <label class="control-label"  for="username">Email</label>
    <div class="controls">
     <input type="text" id="email" name="email" placeholder="" class="input-xlarge" >

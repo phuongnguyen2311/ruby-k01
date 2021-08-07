@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     @email = params[:email]
-    @users =  @email.present? ? User.where(email: @email) : User.all.paginate(page: params[:page])
+    @users =  (@email.present? ? User.where(email: @email) : User.all).paginate(page: params[:page])
   end
   
   # GET /users/1 or /users/1.json
@@ -34,8 +34,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params) # Not the final implementation!
       if @user.save
-         flash[:success] = t "register_sucsess"
-         redirect_to "/login"
+        @user.send_activation_email
+        flash[:info] = "Please check your email to activate your account."
+        redirect_to "/login"
       else
        render :new
       end
@@ -71,12 +72,15 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :phone, :gender, :date_of_birth,  :age, :password , :password_confirmation, :year, :school)
+      params.require(:user).permit(:name, :email, :phone, :gender, :date_of_birth,  :age, :password , :password_confirmation, :year, :school, :admin)
     end
      
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      unless current_user?(@user)
+        flash[:danger] = "You can't update orther user!"
+        redirect_to "/users"
+      end
     end
 end
 # id, name, email, phone, age, created_at, updated_at, date_of_birth, gender, year, school
