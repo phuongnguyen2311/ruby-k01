@@ -2,7 +2,6 @@
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
         <% user.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -109,9 +108,9 @@
    <div class="controls">
     <label class="control-label"  for="admin">Admin</label>
     </br>
-    <input type="radio" id="male" name="user[admin]" value="true">
+    <input type="radio" id="true" name="user[admin]" value="true">
     <label for="true">True</label><br>
-    <input type="radio" id="female" name="user[admin]" value="false">
+    <input type="radio" id="false" name="user[admin]" value="false">
     <label for="false">False</label><br>
    </div>
   </div>
