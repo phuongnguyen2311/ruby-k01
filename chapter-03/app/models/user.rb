@@ -7,18 +7,16 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = URI::MailTo::EMAIL_REGEXP
   validates :email, presence: true, uniqueness: true, length: {maximum: 50},
-  :allow_blank => true, 
-  format: {with: VALID_EMAIL_REGEX,   message: "email erro" } 
-  validates_presence_of :email, message: "khong dc de trong"
+  format: {with: VALID_EMAIL_REGEX,   message: :invalid } 
+  
 
-  validates :name, presence: true,length: { minimum: 2,maximum: 60, message: "ten tu 2 den 60 ki tu"}
-  validates_presence_of :name, message: "khong dc de trong"
+  validates :name, presence: true,length: { minimum: 2,maximum: 60, message: :max_character}
 
   validates :gender, :inclusion => { :in => %w(male female orther), :allow_blank => true}
-  validates_presence_of :gender, message: "khong dc de trong"
+ 
   
   PASSWORD_FORMAT = /\A(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[[:^alnum:]])/x
-  validates :password, format: {with: PASSWORD_FORMAT, message: "password pahi co ki tu viet hoa va dac biet"},
+  validates :password, format: {with: PASSWORD_FORMAT, message: :invalid_password},
   if: -> { password.present? }
   validates_presence_of :password_confirmation, if: -> { password.present? }
   validates_confirmation_of :password, if: -> { password.present? }

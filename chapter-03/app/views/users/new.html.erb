@@ -1,9 +1,9 @@
 <% provide :title, "SignUp" %>
-<form class="form-horizontal" action='/users' method="POST">
+<form class="form-horizontal" action='<%= signup_path%>' method="POST">
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
  <fieldset>
   <div id="legend">
-    <legend class="">Register</legend>
+    <legend class=""><%= t("users.signup.register")%></legend>
 
     <%= render "shared/error_messages" %>
     <% flash.each do |message_type, message| %>
@@ -13,7 +13,7 @@
 
   <div class="control-group">
     <!-- Username -->
-    <label class="control-label"  for="name">Username</label>
+    <label class="control-label"  for="name"><%= t("users.signup.username") %></label>
     <div class="controls">
       <input type="text" id="name" name="user[name]" placeholder="" class="input-xlarge" value="<%= @user.name.present? ? @user.name : ''%>">
       <p class="help-block">Username can contain any letters or numbers, without spaces</p>
@@ -22,7 +22,7 @@
 
   <div class="control-group">
     <!-- E-mail -->
-    <label class="control-label" for="email">E-mail</label>
+    <label class="control-label" for="email"><%= t("users.signup.email") %></label>
     <div class="controls">
       <input type="text" id="email" name="user[email]" placeholder="" class="input-xlarge" value="<%= @user.email.present? ? @user.email : ''%> ">
       <p class="help-block">Please provide your E-mail</p>
@@ -31,7 +31,7 @@
 
   <div class="control-group">
     <!-- Password-->
-    <label class="control-label" for="password">Password</label>
+    <label class="control-label" for="password"><%= t("users.signup.password") %></label>
     <div class="controls">
       <input type="password" id="password" name="user[password]" placeholder="" class="input-xlarge">
       <p class="help-block">Password should be at least 4 characters</p>
@@ -40,7 +40,7 @@
 
   <div class="control-group">
     <!-- Password -->
-    <label class="control-label"  for="password_confirmation">Password (Confirm)</label>
+    <label class="control-label"  for="password_confirmation"><%= t("users.signup.passwordconfirm") %></label>
     <div class="controls">
       <input type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="" class="input-xlarge">
       <p class="help-block">Please confirm password</p>
@@ -50,21 +50,21 @@
   <div class="control-group">
    <!-- Gender -->
    <div class="controls">
-    <label class="control-label"  for="gender">Gender</label>
+    <label class="control-label"  for="gender"><%= t("users.signup.gender") %></label>
     </br>
     <input type="radio" id="male" name="user[gender]" value="male">
-    <label for="male">Male</label><br>
+    <label for="male"><%= t("users.signup.male") %></label><br>
     <input type="radio" id="female" name="user[gender]" value="female">
-    <label for="female">Female</label><br>
+    <label for="female"><%= t("users.signup.female") %></label><br>
     <input type="radio" id="javascript" name="user[gender]" value="orther">
-    <label for="javascript">Orther</label>
+    <label for="javascript"><%= t("users.signup.orther")%></label>
    </div>
   </div>
 
   <div class="control-group">
     <!-- Button -->
     <div class="controls">
-      <button type = "submit" class="btn btn-success">Register</button>
+      <button type = "submit" class="btn btn-success"><%= t("users.signup.register")%></button>
     </div>
   </div>
  </fieldset>

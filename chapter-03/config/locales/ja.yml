@@ -1,0 +1,134 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+ja:
+  controllers:
+    session:
+      activated: "アカウントがアクティブ化されていません。アクティベーションリンクについては、メールを確認してください。"
+      invalid_email_password_combination: "メールパスワードの組み合わせが無効です"
+    users:
+      check_email_activated: "メールをチェックしてアカウントを有効にしてください。"
+      users_update: "プロフィール更新済み"
+      users_delete: "ユーザーが削除されました"
+      users_delete_fail: "削除に失敗!"
+      can_update: "他のユーザーを更新することはできません!"
+    account:
+      activated: "アカウントがアクティブ化されました!"
+      invalid: "無効なアクティベーションリンク"
+    password_resets:
+      sent_email: "パスワードのリセット手順が記載されたメール"
+      not_found: "メールアドレスが見つかりません"
+      password: "パスワードが空ではありません"
+      succsess: "パスワードが更新されました"
+      expired: "パスワードのリセットが期限切れになりました。"
+
+  activerecord:
+    errors:
+      models:
+        user: 
+          attributes:
+            password: 
+              blank: "空白にすることはできません"
+              invalid_password: "パスワードにはベトナム語と特殊文字が必要です"
+            password_confirmation:
+              confirmation: "パスワードと一致しません"
+            name: 
+              blank: "空白にすることはできません"
+              max_character: "2-> 60文字である必要があります"
+            email:
+              taken: "すでに使用されている"
+              blank: "空白にすることはできません"
+              invalid: "無効なメール"
+            gender:
+              blank: "空白にすることはできません"
+  helper:
+    session:
+      login: "ログインしてください."
+
+  header:
+    sample_app: サンプルアプリ
+    home: 家
+    help: ヘルプ
+    login: ログインする
+    signup: サインアップ
+    profile: プロフィール
+    logout: ログアウト
+  
+  users:
+    index:
+      user: ユーザー
+      search: 探す
+      name: 名前
+      email: Eメール
+      phone: 電話
+      age: 年齢
+      birth: 誕生
+      gender: 性別
+      school: 学校
+      status: ステータス
+      show: ショー
+      edit: 編集
+      delete: 削除
+      new_user: 新規ユーザー
+      year: 年
+      back: 戻る
+
+    signup: 
+      username: ユーザー名
+      email: Eメール
+      password: パスワード
+      passwordconfirm: パスワードの確認
+      gender: 性別
+      male: 男
+      female: 女性
+      orther: または
+      register: 登録
+  
+  session: 
+    login:
+      email: Eメール
+      password: パスワード
+      remember_me: 私を覚えてますか
+      login: ログインする
+      forgot: パスワードをお忘れですか
+  reset_password:
+    new:
+      forgot: "パスワードをお忘れですか"
+      email:  Eメール
+      submit: 送信
+    edit:
+      reset: パスワードを再設定する
+      password: パスワード
+      passwordconfirm: パスワードの確認
+      update: アップデート
+  will_paginate:
+    previous_label: <- 前
+    next_label:  次 ->

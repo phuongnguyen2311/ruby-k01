@@ -5,46 +5,46 @@
  <%= @user.name %>
 </h1>
 <p>
-  <strong>Name:</strong>
+  <strong><%=t("users.index.name")%>:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong><%=t("users.index.email")%>:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong><%=t("users.index.phone")%>:</strong>
   <%= @user.phone %>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong><%=t("users.index.age")%>:</strong>
   <%= @user.age %>
 </p>
 
 <p>
-  <strong>BirthDay:</strong>
+  <strong><%=t("users.index.birth")%>:</strong>
   <%= @user.date_of_birth %>
 </p>
 
 <p>
-  <strong>Sex:</strong>
+  <strong><%=t("users.index.gender")%>:</strong>
   <%= @user.gender %>
 </p>
 
 <p>
-  <strong>School:</strong>
+  <strong><%=t("users.index.school")%>:</strong>
   <%= @user.school %>
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <strong><%=t("users.index.year")%>:</strong>
   <%= @user.year %>
 </p>
 <p>
-  <strong>Pass:</strong>
+  <strong><%=t("users.signup.password")%>:</strong>
   <%= @user.password_digest %>
 </p>
 
@@ -56,5 +56,5 @@
 
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t("users.index.edit"), edit_user_path(@user) %> |
+<%= link_to t("users.index.back"), users_path %>

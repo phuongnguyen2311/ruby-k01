@@ -12,7 +12,7 @@
 
   <div class="control-group">
     <!-- Username -->
-    <label class="control-label"  for="name">Username</label>
+    <label class="control-label"  for="name"><%= t("users.index.name")%></label>
     <div class="controls">
       <input type="text" id="name" name="user[name]" placeholder="" class="input-xlarge" value="<%= @user.name.present? ? @user.name : ''%>">
       <p class="help-block">Username can contain any letters or numbers, without spaces</p>
@@ -21,7 +21,7 @@
 
   <div class="control-group">
     <!-- E-mail -->
-    <label class="control-label" for="email">E-mail</label>
+    <label class="control-label" for="email"><%= t("users.index.mail")%></label>
     <div class="controls">
       <input type="text" id="email" name="user[email]" placeholder="" class="input-xlarge" value="<%= @user.email.present? ? @user.email : ''%> ">
       <p class="help-block">Please provide your E-mail</p>
@@ -30,7 +30,7 @@
 
   <div class="control-group">
     <!-- Password-->
-    <label class="control-label" for="password">Password</label>
+    <label class="control-label" for="password"><%= t("users.signup.password")%></label>
     <div class="controls">
       <input type="password" id="password" name="user[password]" placeholder="" class="input-xlarge">
       <p class="help-block">Password should be at least 4 characters</p>
@@ -39,7 +39,7 @@
 
   <div class="control-group">
     <!-- Password -->
-    <label class="control-label"  for="password_confirmation">Password (Confirm)</label>
+    <label class="control-label"  for="password_confirmation"><%= t("users.signup.passwordconfirm")%></label>
     <div class="controls">
       <input type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="" class="input-xlarge">
       <p class="help-block">Please confirm password</p>
@@ -47,7 +47,7 @@
   </div>
   <div class="control-group">
     <!-- Phone -->
-    <label class="control-label" for="phone">Phone</label>
+    <label class="control-label" for="phone"><%= t("users.index.phone")%></label>
     <div class="controls">
       <input type="text" id="phone" name="user[phone]" placeholder="" class="input-xlarge" value="<%= @user.phone.present? ? @user.phone : ''%> ">
       <p class="help-block">Please provide your E-mail</p>
@@ -56,7 +56,7 @@
 
   <div class="control-group">
     <!-- Age -->
-    <label class="control-label" for="email">Age</label>
+    <label class="control-label" for="email"><%= t("users.index.age")%></label>
     <div class="controls">
       <input type="text" id="age" name="user[age]" placeholder="" class="input-xlarge" value="<%= @user.age.present? ? @user.age : ''%> ">
     </div>
@@ -64,7 +64,7 @@
 
   <div class="control-group">
     <!-- BirthDay -->
-    <label class="control-label" for="date_of_birth">BirthDay</label>
+    <label class="control-label" for="date_of_birth"><%= t("users.index.birth")%></label>
     <div class="controls">
       <input type="text" id="date_of_birth" name="user[date_of_birth]" placeholder="" class="input-xlarge" value="<%= @user.date_of_birth.present? ? @user.date_of_birth : ''%> ">
       <p class="help-block">Please dd/mm/yyyy </p>
@@ -73,7 +73,7 @@
 
   <div class="control-group">
     <!-- Year -->
-    <label class="control-label" for="year">Year</label>
+    <label class="control-label" for="year"><%= t("users.index.year")%></label>
     <div class="controls">
       <input type="text" id="year" name="user[year]" placeholder="" class="input-xlarge" value="<%= @user.year.present? ? @user.year : ''%> ">
       <p class="help-block">Please provide your E-mail</p>
@@ -82,7 +82,7 @@
 
   <div class="control-group">
     <!-- BirthDay -->
-    <label class="control-label" for="school">School</label>
+    <label class="control-label" for="school"><%= t("users.index.school")%></label>
     <div class="controls">
       <input type="text" id="school" name="user[school]" placeholder="" class="input-xlarge" value="<%= @user.school.present? ? @user.school : ''%> ">
       <p class="help-block">Please provide your E-mail</p>
@@ -92,26 +92,14 @@
   <div class="control-group">
    <!-- Gender -->
    <div class="controls">
-    <label class="control-label"  for="gender">Gender</label>
+    <label class="control-label"  for="gender"><%= t("users.index.gender")%></label>
     </br>
     <input type="radio" id="male" name="user[gender]" value="male">
-    <label for="male">Male</label><br>
+    <label for="male"><%= t("users.signup.male") %></label><br>
     <input type="radio" id="female" name="user[gender]" value="female">
-    <label for="female">Female</label><br>
+    <label for="female"><%= t("users.signup.female") %></label><br>
     <input type="radio" id="javascript" name="user[gender]" value="orther">
-    <label for="javascript">Orther</label>
-   </div>
-  </div>
-
-  <div class="control-group">
-   <!-- admin -->
-   <div class="controls">
-    <label class="control-label"  for="admin">Admin</label>
-    </br>
-    <input type="radio" id="true" name="user[admin]" value="true">
-    <label for="true">True</label><br>
-    <input type="radio" id="false" name="user[admin]" value="false">
-    <label for="false">False</label><br>
+    <label for="javascript"><%= t("users.signup.orther") %></label>
    </div>
   </div>
 

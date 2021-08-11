@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params) # Not the final implementation!
       if @user.save
         @user.send_activation_email
-        flash[:info] = "Please check your email to activate your account."
+        flash[:info] = t"controllers.users.check_email_activated"
         redirect_to "/login"
       else
        render :new
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     if @user.update user_params
-      flash[:success] = "Profile updated"
+      flash[:success] = t"controllers.users.users_update"
       redirect_to @user
     else
       render "edit"
@@ -57,9 +57,9 @@ class UsersController < ApplicationController
   def destroy
     user = User.find_by(id: params[:id])
     if user&.destroy
-      flash[:success] = "User deleted"
+      flash[:success] = t"controllers.users.users_delete"
     else
-      flash[:danger] = "Delete fail!"
+      flash[:danger] = t"controllers.users.users_delete_fail"
     end
       redirect_to "/users"
   end
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       unless current_user?(@user)
-        flash[:danger] = "You can't update orther user!"
+        flash[:danger] = t"controllers.users.can_update"
         redirect_to "/users"
       end
     end
