@@ -28,7 +28,7 @@ module SessionsHelper
   def sign_in?
     unless logged_in?
       flash[:danger] = t"helper.session.login"
-      redirect_to login_url
+      redirect_to login_path
     end
   end
 

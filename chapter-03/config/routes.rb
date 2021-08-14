@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  
   scope "(:locale)", locale: /en|ja/ do
-    resources :microposts
-    root to:"microposts#index"
+    resources :microposts do
+      resources :comments
+    end
+
+    root to:"users#index"
 
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
@@ -17,6 +21,9 @@ Rails.application.routes.draw do
     get 'static_pages/help'
     get 'static_pages/contact'
   
+    # match "/404", to: "errors#file_not_found", via: :all
+    # match "/500", to: "errors#internal_server_error", via: :all
+
     resources :account_activations, only: :edit
 
     resources :password_resets, only: [:new, :create, :edit, :update]

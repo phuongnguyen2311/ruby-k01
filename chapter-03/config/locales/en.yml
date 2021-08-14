@@ -75,7 +75,7 @@ en:
   header:
     sample_app: sample app
     home: Home
-    help: Help
+    post: Microposts
     login: LogIn
     signup: SignUp
     profile: Profile

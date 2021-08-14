@@ -5,7 +5,7 @@
   <div id="legend">
     <legend class=""><%= t("users.signup.register")%></legend>
 
-    <%= render "shared/error_messages" %>
+    <%= render "shared/error" %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>

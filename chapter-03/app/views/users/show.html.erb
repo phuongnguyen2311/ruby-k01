@@ -1,60 +1,17 @@
-<p id="notice"><%= notice %></p>
-<% provide :title, @user.name %>
-<h1>
- <%= gravatar_for @user %>
- <%= @user.name %>
-</h1>
-<p>
-  <strong><%=t("users.index.name")%>:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong><%=t("users.index.email")%>:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong><%=t("users.index.phone")%>:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong><%=t("users.index.age")%>:</strong>
-  <%= @user.age %>
-</p>
-
-<p>
-  <strong><%=t("users.index.birth")%>:</strong>
-  <%= @user.date_of_birth %>
-</p>
-
-<p>
-  <strong><%=t("users.index.gender")%>:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong><%=t("users.index.school")%>:</strong>
-  <%= @user.school %>
-</p>
-
-<p>
-  <strong><%=t("users.index.year")%>:</strong>
-  <%= @user.year %>
-</p>
-<p>
-  <strong><%=t("users.signup.password")%>:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<h1>List Microposts</h1>
-<div>
-<% @user.microposts.each do |micro| %>
-  <p><%= micro.content%> </p>
-<% end %>
-
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1><%= gravatar_for @user %><%= @user.name %></h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @microposts.any? %>
+      <h3>Microposts (<%= @microposts.count %>)</h3>
+        <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <%= will_paginate @microposts %>
+   <% end %>
+  </div>
 </div>
-
-<%= link_to t("users.index.edit"), edit_user_path(@user) %> |
-<%= link_to t("users.index.back"), users_path %>

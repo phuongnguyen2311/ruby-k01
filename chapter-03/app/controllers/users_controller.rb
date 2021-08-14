@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user =  User.includes(:microposts).find_by(id: params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
   
   def contacts
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
       if @user.save
         @user.send_activation_email
         flash[:info] = t"controllers.users.check_email_activated"
-        redirect_to "/login"
+        redirect_to login_path
       else
        render :new
       end
@@ -61,7 +62,7 @@ class UsersController < ApplicationController
     else
       flash[:danger] = t"controllers.users.users_delete_fail"
     end
-      redirect_to "/users"
+      redirect_to root_url
   end
 
   private
@@ -79,7 +80,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       unless current_user?(@user)
         flash[:danger] = t"controllers.users.can_update"
-        redirect_to "/users"
+        redirect_to user_path
       end
     end
 end
