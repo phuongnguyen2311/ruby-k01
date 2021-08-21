@@ -14,3 +14,5 @@ ActiveStorage.start()
 
 require("jquery")
 import "bootstrap"
+window.Cookies = require("js-cookie")
+window.Handlebars = require("handlebars")

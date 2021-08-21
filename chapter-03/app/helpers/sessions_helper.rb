@@ -47,5 +47,7 @@ module SessionsHelper
   def current_user?(user)
     user == current_user
   end
-  
+  def set_api_token(user)
+    cookies.permanent[:api_token] = user.try(:api_token) || ''
+  end
 end

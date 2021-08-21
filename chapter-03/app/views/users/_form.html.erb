@@ -1,6 +1,14 @@
 <%= form_with(model: user) do |form| %>
-  <%= render "shared/error_messages", object: f.object %>
-
+  <%= render "shared/error" %>
+  
+    <div class="control-group">
+    <span class="image">
+    <label class="control-label"  for="avatar">Avartar</label>
+      <div class="controls">
+      <input type="file" id="avatar" name="avatar" accept: "image/jpeg,image/gif,image/png">
+    </div>
+    </span>
+  </div>
   <div class="control-group">
     <!-- Username -->
     <label class="control-label"  for="name"><%= t("users.index.name")%></label>

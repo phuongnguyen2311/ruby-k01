@@ -7,48 +7,50 @@
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words micropost.created_at %> ago.
-    <div class="like">     
-      <form method="" action= "<%=  %>">
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <input type="hidden" name="comment[user_comment_id]" value="<%= current_user.id %>"> 
-        <button  type="submit" class="fas fa-thumbs-up fa-lg" id="submit_form">Like</button> 
-      </form>                                     
-    </div>
+    <%loves = micropost.loves.nil? ? ' ' : micropost.loves.split(',').join("\n")%>
+    <i class="fab fa-gratipay btn-loves" title="<%= loves %>"></i>
     <a class="reply"><i class="fa fa-reply fa-xs"></i>Comment</a>
     <% if current_user? micropost.user %>
       <%= link_to "delete", micropost, method: :delete, data: {confirm: "You sure?"} %>
     <% end %>
   </span>
-  <span>
-  <div class="comment" >     
-    <form method="POST" action= "/microposts/<%= micropost.id %>/comments">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <%= link_to gravatar_for(current_user, size: 20), current_user %>
-      <input type="hidden" name="comment[micropost_id]" value="<%= micropost.id %>">
-      <input type="hidden" name="comment[user_comment_id]" value="<%= current_user.id %>">
-      <textarea class="form-control" name="comment[content]" placeholder="Enter your reply" > 
-      </textarea>  
-      <button  type="submit" class="btn btn-primary" id="submit_form">Send</button> 
-    </form>                                     
-  </div>
+  <span class="view_more">View more <%= micropost.comments.size %> comment</span>
+  <span class="comment" style="display: none">
+    <div class="form-outline" style="margin-left: 8%; margin-right: 8%;">
+      <%= link_to gravatar_for(current_user, size: 40), current_user, class: 'avatar-cmt' %>
+      <input type="text"  class="form-control in-comment" placeholder="What's on your mind, <%= current_user.name %>?" />
+    </div>
   </span>
-  <span>
+  <span class="list-comment " style="display:none">
     <% micropost.comments.each do |comment| %>
-      <div>
-        <span><%= link_to gravatar_for(current_user, size: 20), current_user %>
-          <%= comment.content %>
+      <div class="form-outline list-cmt-span " style="margin-left: 8%; margin-right: 8%;">
+        <span><%= link_to gravatar_for(comment.user, size: 40), comment.user, class: 'avatar-cmt' %>
+          <p class="p-comment"><%= comment.content %></p>
         </span>
       </div>
     <% end %>
   </span>
 </li>
+
+<script id="list-comment-template" type="text/x-handlebars-template">
+  <div class="form-outline list-cmt-span" style="margin-left: 8%; margin-right: 8%;">
+    <span>
+      <a class="avatar-cmt" href="#"><img alt="" class="gravatar" src={{avatar}}></a>
+      <p class="p-comment">{{ comment.content }}</p>
+    </span>
+  </div>
+</script>
 <style type="text/css" media="screen">
   .comment {
     display: none;
   }
-  .like{
-    float:right
+  .red-color {
+    color: red;
   }
+  .view_more {
+    color:blue;
+  }
+  
 </style>
 
 

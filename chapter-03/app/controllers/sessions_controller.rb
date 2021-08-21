@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
     if user.present? && user.authenticate(params[:password])
       if user.activated
         log_in (user)
+        user.generate_token
+        set_api_token(user)
         params[:remember] == "on" ? remember(user) : forget(user)
         redirect_to users_path
       else

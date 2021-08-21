@@ -11,6 +11,10 @@ module Blog
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     # config.exceptions_app = self.routes
+    config.autoload_paths << config.root.join('lib')
+    config.autoload_paths << config.root.join('lib/concerns')
+    config.autoload_paths << config.root.join('app/services')
+    config.autoload_paths << config.root.join('app/serializers')
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

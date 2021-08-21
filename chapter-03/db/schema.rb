@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_040020) do
+ActiveRecord::Schema.define(version: 2021_08_17_145554) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 2021_08_14_040020) do
   end
 
   create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "user_comment_id"
+    t.integer "user_id"
     t.integer "micropost_id"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_comment_id", "micropost_id"], name: "index_comments_on_user_comment_id_and_micropost_id"
+    t.index ["user_id", "micropost_id"], name: "index_comments_on_user_id_and_micropost_id"
   end
 
   create_table "microposts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_040020) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "loves"
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
   end
 
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_040020) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "api_token_digest"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

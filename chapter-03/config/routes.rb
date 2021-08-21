@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   
   scope "(:locale)", locale: /en|ja/ do
-    resources :microposts do
-      resources :comments
-    end
+    resources :microposts
 
     root to:"users#index"
 
@@ -29,6 +27,18 @@ Rails.application.routes.draw do
     resources :password_resets, only: [:new, :create, :edit, :update]
   
     resources :users
+    namespace :api, defaults: { format: :json } do
+      namespace :v1 do
+        resources :users, only: %i[index] do
+          collection do
+            get :friends
+          end
+        end
+        post "/login", to: "sessions#create"
+        post "/love", to: "microposts#love"
+        post "/comment", to: "microposts#comment"
+      end
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

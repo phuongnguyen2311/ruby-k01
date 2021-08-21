@@ -92,3 +92,34 @@ aside {
         margin-left: 60px;
         }
 }
+
+#header-story {
+    padding-bottom: 2%;
+    padding-left: 52px;
+  }
+  #header-story .story-micro {
+    background-color: #ea9999;
+    position: relative;
+    top: 7px;
+    width: 127px;
+    height: 160px;
+    border-radius: 13px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .story-micro .gravatar{
+    position: relative;
+    top: 9px;
+    left: 22px;
+    border-radius: 49px;
+  }
+  .next_right {
+    position: relative;
+    left: 80%;
+    top: -150px;
+  }
+  .story-micro .img-add-friend{
+    position: relative;
+    top: 94px;
+    left: -39px; 
+  }
