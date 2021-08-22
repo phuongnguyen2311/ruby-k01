@@ -2,6 +2,14 @@ class User < ApplicationRecord
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :comments,  dependent: :destroy
+
+  has_many :active_relationships, class_name: Relationship.name,
+    foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+    foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
+
   has_one_attached :avatar
   attr_accessor :remember_token, :activation_token, :reset_token, :api_token
   before_save :downcase_email
@@ -80,8 +88,15 @@ class User < ApplicationRecord
     microposts
   end
 
-  
-
+  def follow(other_user) #Follows a user.
+    following << other_user
+  end
+  def unfollow other_user #Unfollows a user.
+    following.delete other_user
+  end
+  def following? other_user #Returns if the current user is following the other_user or not
+    following.include? other_user
+  end
 
   private
 # Converts email to all lower-case.

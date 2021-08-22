@@ -9,6 +9,7 @@ function Micropost(options) {
         'loves': '/api/v1/love',
         'comment': '/api/v1/comment',
         'friends': '/api/v1/users/friends',
+        'following': '/api/v1/following',
         'token': Cookies.get("api_token"),
       },
       data: {}
@@ -139,6 +140,40 @@ function Micropost(options) {
       });
     });
   }
+  module.clickAddFriend = function(){
+    $(document).on('click','.story-micro',function(){
+      var id = $(this).attr("data-user-id");
+      el = $(this);
+      page = parseInt($(el).attr("data-next-page"));
+      $.ajax({
+        url: module.settings.api.following,
+        headers: {
+          'Api-Token': module.settings.api.token
+        },
+        type: 'GET',
+        data: { id: id },
+        dataType: 'json',
+        success: function(data) {
+          if (data.code == 200) {
+            console.log("success" + module.settings.api.following)
+            if (data.data.users == ""){
+              $("#header-story").html("");
+            }else{
+              var template_friends = Handlebars.compile(module.settings.template.friends.html());
+                $("#header-story").html("");
+                $("#header-story").append(template_friends({
+                  users: data.data.users
+                }));
+            }
+            
+          } else {
+            console.log("error" + module.settings.api.friends)
+          }
+        },
+        error: function() {}
+      });
+    });
+  }
     module.init = function(){
       module.size_image();
       module.comment();
@@ -146,6 +181,7 @@ function Micropost(options) {
       module.eventEnterComment();
       module.eventClickViewComment();
       module.clickNextFriend();
+      module.clickAddFriend();
     };
   }
     

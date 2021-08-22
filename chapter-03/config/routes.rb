@@ -33,10 +33,12 @@ Rails.application.routes.draw do
           collection do
             get :friends
           end
+          
         end
         post "/login", to: "sessions#create"
         post "/love", to: "microposts#love"
         post "/comment", to: "microposts#comment"
+        get :following, to: "users#following"
       end
     end
   end
