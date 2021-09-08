@@ -1,0 +1,134 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  controllers:
+    session:
+      activated: "Account not activated. Check your email for the activation link."
+      invalid_email_password_combination: "Invalid email password combination"
+    users:
+      check_email_activated: "Please check your email to activate your account."
+      users_update: "Profile updated"
+      users_delete: "User deleted"
+      users_delete_fail: "Delete fail!"
+      can_update: "You can't update orther user!"
+    account:
+      activated: "Account activated!"
+      invalid: "Invalid activation link"
+    password_resets:
+      sent_email: "Email sent with password reset instructions"
+      not_found: "Email address not found"
+      password: "Password not empty"
+      succsess: "Password updated"
+      expired: "Password reset has expired."
+  activerecord:
+    errors:
+      models:
+        user: 
+          attributes:
+            password: 
+              blank: "Not Empty!!"
+              invalid_password: "must have uppercase"
+            password_confirmation:
+              confirmation: " doesn't match Password"
+            name: 
+              blank: "Not Empty!!"
+              max_character: "You must 2->60 character"
+            email:
+              taken: "has already been taken"
+              blank: "Not Empty!!"
+              invalid: "Invalid email"
+            gender:
+             blank : "Not Empty!!"
+  helper:
+    session:
+      login: "Please log in."
+
+  header:
+    sample_app: sample app
+    home: Home
+    post: Microposts
+    login: LogIn
+    signup: SignUp
+    profile: Profile
+    logout: Logout
+
+  users:
+    index:
+      user: Users
+      search: Search
+      name: Name
+      email: Email
+      phone: Phone
+      age: Age
+      birth: BirthDay
+      gender: Gender
+      school: School
+      status: Status
+      show: Show
+      edit: Edit
+      delete: Delete
+      new_user: New Users
+      year: Year
+      back: Back
+
+    signup: 
+      username: Username
+      email: E-mail
+      password: Password
+      passwordconfirm: Password(Confirm)
+      gender: Gender
+      male: Male
+      female: Female
+      orther: Orther
+      register: Register
+
+  session:  
+    login:
+      email: E-mail
+      password: Password
+      remember_me: Remembe me
+      login: LogIn
+      forgot: Forgot Password
+  
+  reset_password:
+    new:
+      forgot: "Forgot password"
+      email:  E-mail
+      submit: Submit
+    edit:
+      reset: Reset Password
+      password: Password
+      passwordconfirm: Password(Confirm)
+      update: Update
+  will_paginate:
+    previous_label: <- Previous
+    next_label:  Next ->

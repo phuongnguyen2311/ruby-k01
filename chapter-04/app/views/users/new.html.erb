@@ -1,0 +1,72 @@
+<% provide :title, "SignUp" %>
+<form class="form-horizontal" action='/signup' method="POST">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+ <fieldset>
+  <div id="legend">
+    <legend class="">Register</legend>
+
+    <%= render "shared/error_messages" %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+  </div>
+
+  <div class="control-group">
+    <!-- Username -->
+    <label class="control-label"  for="name">Username</label>
+    <div class="controls">
+      <input type="text" id="name" name="user[name]" placeholder="" class="input-xlarge" value="<%= @user.name.present? ? @user.name : ''%>">
+      <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- E-mail -->
+    <label class="control-label" for="email">E-mail</label>
+    <div class="controls">
+      <input type="text" id="email" name="user[email]" placeholder="" class="input-xlarge" value="<%= @user.email.present? ? @user.email : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Password-->
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+      <input type="password" id="password" name="user[password]" placeholder="" class="input-xlarge">
+      <p class="help-block">Password should be at least 4 characters</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Password -->
+    <label class="control-label"  for="password_confirmation">Password (Confirm)</label>
+    <div class="controls">
+      <input type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+   <!-- Gender -->
+   <div class="controls">
+    <label class="control-label"  for="gender">Gender</label>
+    </br>
+    <input type="radio" id="male" name="user[gender]" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="user[gender]" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="javascript" name="user[gender]" value="orther">
+    <label for="javascript">Orther</label>
+   </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Button -->
+    <div class="controls">
+      <button type = "submit" class="btn btn-success">Register</button>
+    </div>
+  </div>
+ </fieldset>
+</form>
+
