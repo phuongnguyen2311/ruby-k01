@@ -1,0 +1,6 @@
+<% provide(:title, "Edit user") %>
+<% provide(:button_text, "Save changes") %>
+<h1>Update your profile</h1>
+<%= render 'form', user: @user, edit: @edit %>
+<%= link_to t("users.index.show"), @user %> |
+<%= link_to t("users.index.back"), users_path %>

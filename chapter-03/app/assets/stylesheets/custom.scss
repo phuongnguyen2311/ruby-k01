@@ -1,0 +1,125 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+body {
+    padding-top: 60px;
+    }
+    section {
+    overflow: auto;
+    }
+    textarea {
+    resize: vertical;
+    }
+    .center {
+    text-align: center;
+    }
+    .center h1 {
+    margin-bottom: 10px;
+    }
+/* header */
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    }
+    #logo:hover {
+    color: #fff;
+    text-decoration: none;
+    }
+.float-right {
+    float:right;
+}
+
+#error_explanation {
+    color: red;
+    ul {
+    color: red;
+    margin: 0 0 30px;
+    }
+    }
+    .field_with_errors {
+    @extend .has-error;
+    .form-control {
+    color: $state-danger-text;
+    }
+aside {
+    textarea {
+    height: 100px;
+    margin-bottom: 5px;
+    }
+    }
+    span.picture {
+    margin-top: 10px;
+    input {
+    border: 0;
+    }
+    }
+    }
+.microposts {
+  list-style: none;
+    padding: 0;
+    li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+     }
+.user {
+    margin-top: 5em;
+    padding-top: 0;
+    }
+.gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    }
+    }
+.microposts {
+    .content {
+    display: block;
+    margin-left: 60px;
+    img {
+       display: block;
+        padding: 5px 0;
+        }
+        }
+    .timestamp {
+        color: $gray-light;
+        display: block;
+        margin-left: 60px;
+        }
+}
+
+#header-story {
+    padding-bottom: 2%;
+    padding-left: 52px;
+  }
+  #header-story .story-micro {
+    background-color: #ea9999;
+    position: relative;
+    top: 7px;
+    width: 127px;
+    height: 160px;
+    border-radius: 13px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .story-micro .gravatar{
+    position: relative;
+    top: 9px;
+    left: 22px;
+    border-radius: 49px;
+  }
+  .next_right {
+    position: relative;
+    left: 80%;
+    top: -150px;
+  }
+  .story-micro .img-add-friend{
+    position: relative;
+    top: 94px;
+    left: -39px; 
+  }

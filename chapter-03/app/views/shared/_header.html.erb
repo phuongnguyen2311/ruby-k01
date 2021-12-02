@@ -1,0 +1,20 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+ <div class="container">
+  <%= link_to t("header.sample_app") , "/users", id: "logo" %>
+   <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to image_tag("https://images6.fanpop.com/image/photos/41300000/Nissh-ki-The-Rising-Sun-Japan-Flag-Today-japan-41319152-375-250.jpg", :width => 25, :height => 25), locale: "ja" %></li>
+      <li><%= link_to image_tag("https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/800px-Flag_of_the_United_States.svg.png", :width => 25, :height => 25), locale: "en" %> </li>
+      <li><%= link_to t("header.home"), users_path %></li>
+      <li><%= link_to t("header.post"), static_pages_home_path %></li>
+      <% if logged_in? %>
+      <li><%= link_to t("header.profile"), "/contact" %></li>
+      <li><%= link_to t("header.logout"), logout_path, method: :delete %></li> 
+      <% else %>
+        <li><%= link_to t("header.login"), login_path %></li>
+        <li><%= link_to t("header.signup"), signup_path %></li>
+      <% end %> 
+    </ul>
+   </nav>
+ </div>
+</header>

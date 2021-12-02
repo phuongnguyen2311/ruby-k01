@@ -1,0 +1,108 @@
+<%= form_with(model: user) do |form| %>
+  <%= render "shared/error" %>
+  
+    <div class="control-group">
+    <span class="image">
+    <label class="control-label"  for="avatar">Avartar</label>
+      <div class="controls">
+      <input type="file" id="avatar" name="avatar" accept: "image/jpeg,image/gif,image/png">
+    </div>
+    </span>
+  </div>
+  <div class="control-group">
+    <!-- Username -->
+    <label class="control-label"  for="name"><%= t("users.index.name")%></label>
+    <div class="controls">
+      <input type="text" id="name" name="user[name]" placeholder="" class="input-xlarge" value="<%= @user.name.present? ? @user.name : ''%>">
+      <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- E-mail -->
+    <label class="control-label" for="email"><%= t("users.index.mail")%></label>
+    <div class="controls">
+      <input type="text" id="email" name="user[email]" placeholder="" class="input-xlarge" value="<%= @user.email.present? ? @user.email : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Password-->
+    <label class="control-label" for="password"><%= t("users.signup.password")%></label>
+    <div class="controls">
+      <input type="password" id="password" name="user[password]" placeholder="" class="input-xlarge">
+      <p class="help-block">Password should be at least 4 characters</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Password -->
+    <label class="control-label"  for="password_confirmation"><%= t("users.signup.passwordconfirm")%></label>
+    <div class="controls">
+      <input type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+  <div class="control-group">
+    <!-- Phone -->
+    <label class="control-label" for="phone"><%= t("users.index.phone")%></label>
+    <div class="controls">
+      <input type="text" id="phone" name="user[phone]" placeholder="" class="input-xlarge" value="<%= @user.phone.present? ? @user.phone : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Age -->
+    <label class="control-label" for="email"><%= t("users.index.age")%></label>
+    <div class="controls">
+      <input type="text" id="age" name="user[age]" placeholder="" class="input-xlarge" value="<%= @user.age.present? ? @user.age : ''%> ">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- BirthDay -->
+    <label class="control-label" for="date_of_birth"><%= t("users.index.birth")%></label>
+    <div class="controls">
+      <input type="text" id="date_of_birth" name="user[date_of_birth]" placeholder="" class="input-xlarge" value="<%= @user.date_of_birth.present? ? @user.date_of_birth : ''%> ">
+      <p class="help-block">Please dd/mm/yyyy </p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Year -->
+    <label class="control-label" for="year"><%= t("users.index.year")%></label>
+    <div class="controls">
+      <input type="text" id="year" name="user[year]" placeholder="" class="input-xlarge" value="<%= @user.year.present? ? @user.year : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- BirthDay -->
+    <label class="control-label" for="school"><%= t("users.index.school")%></label>
+    <div class="controls">
+      <input type="text" id="school" name="user[school]" placeholder="" class="input-xlarge" value="<%= @user.school.present? ? @user.school : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+   <!-- Gender -->
+   <div class="controls">
+    <label class="control-label"  for="gender"><%= t("users.index.gender")%></label>
+    </br>
+    <input type="radio" id="male" name="user[gender]" value="male">
+    <label for="male"><%= t("users.signup.male") %></label><br>
+    <input type="radio" id="female" name="user[gender]" value="female">
+    <label for="female"><%= t("users.signup.female") %></label><br>
+    <input type="radio" id="javascript" name="user[gender]" value="orther">
+    <label for="javascript"><%= t("users.signup.orther") %></label>
+   </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

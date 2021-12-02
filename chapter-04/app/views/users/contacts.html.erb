@@ -1,0 +1,111 @@
+<p id="notice"><%= notice %></p>
+<% provide :title, @user.name %>
+<form class="form-horizontal" action='/users' method="POST">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+ <fieldset>
+  <div id="legend">
+    <legend class="">Profile</legend>
+
+    <%= render "shared/error_messages" %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+  </div>
+
+  <div class="control-group">
+    <!-- Username -->
+    <label class="control-label"  for="username">Username</label>
+    <div class="controls">
+      <input type="text" id="username" name="user[name]" placeholder="" class="input-xlarge" value="<%= @user.name.present? ? @user.name : ''%>">
+      <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- E-mail -->
+    <label class="control-label" for="email">E-mail</label>
+    <div class="controls">
+      <input type="text" id="email" name="user[email]" placeholder="" class="input-xlarge" value="<%= @user.email.present? ? @user.email : ''%> ">
+      <p class="help-block">Please provide your E-mail</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Password-->
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+      <input type="text" id="password" name="user[password]" placeholder="" class="input-xlarge" value="<%= @user.password_digest.present? ? @user.password_digest : ''%> ">
+      <p class="help-block">Password should be at least 4 characters</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- School -->
+    <label class="control-label"  for="school">School</label>
+    <div class="controls">
+      <input type="text" id="school" name="user[school]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+   <!-- Gender -->
+   <div class="controls">
+    <label class="control-label"  for="gender">Gender</label>
+    </br>
+    <input type="radio" id="male" name="user[gender]" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="user[gender]" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="javascript" name="user[gender]" value="orther">
+    <label for="javascript">Orther</label>
+   </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Phone -->
+    <label class="control-label"  for="phone">Phone</label>
+    <div class="controls">
+      <input type="text" id="phone" name="user[phone]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Age -->
+    <label class="control-label"  for="date_of_birth">Age</label>
+    <div class="controls">
+      <input type="text" id="age" name="user[age]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- BirthDay -->
+    <label class="control-label"  for="date_of_birth">BirthDay</label>
+    <div class="controls">
+      <input type="text" id="date_of_birth" name="user[date_of_birth]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <!-- Year -->
+    <label class="control-label"  for="password_confirm">Year</label>
+    <div class="controls">
+      <input type="text" id="year" name="user[year]" placeholder="" class="input-xlarge">
+      <p class="help-block">Please confirm password</p>
+    </div>
+  </div>
+ 
+  <div class="control-group">
+    <!-- Button -->
+    <div class="controls">
+      <button type = "submit" class="btn btn-success">Edit</button>
+    </div>
+  </div>
+ </fieldset>
+</form>
+
+
+<%= link_to 'Back', users_path %>
